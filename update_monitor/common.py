@@ -19,6 +19,12 @@ from datetime import timedelta
 from datetime import datetime
 
 
+db_host     = "localhost"
+db_name     = "******"
+db_user     = "******"
+db_password = "*****"
+
+
 whatsapp_audio_table   = "whatsapp_audio"
 whatsapp_image_table   = "whatsapp_image"
 whatsapp_sticker_table = "whatsapp_sticker"
@@ -26,11 +32,14 @@ whatsapp_link_table    = "whatsapp_link"
 whatsapp_message_table = "whatsapp_message"
 whatsapp_video_table   = "whatsapp_video"
 
-db_host = "localhost"
-db_name = "whatsapp"
-db_user = "whomakestrends"
-db_password = "678hjba!@1ABCUyvs8"
 
+def load_db_settings():
+    #Load settings from settings file
+    db_host     = "localhost"
+    db_name     = "******"
+    db_user     = "******"
+    db_password = "*****"
+    return 
 
 
 def connect_app_database():
