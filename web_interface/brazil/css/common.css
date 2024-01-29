@@ -1,0 +1,113 @@
+
+body {
+    background-image: url('../img/bg-clouds.png');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-color: #c0deed !important;
+    font-size: 15px;
+    text-align: center;
+    font-family: Georgia, Utopia, Palatino, 'Palatino Linotype', serif;
+    padding: 0;
+}
+
+.container {
+    background-color: #fafafa;
+    text-align: left;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 15px;
+    margin-left: 115px;
+    margin-right: 115px;
+    width: 80% !important;
+}
+
+a {
+    color: #224B8D;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #224B8D;
+    text-decoration: none;
+    border-bottom: 1px black dotted;
+}
+
+h1 {
+    font-family: Georgia, Utopia, Palatino, 'Palatino Linotype', serif;
+    color: #527BBD;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.header h1 {
+    font-family: Georgia, Utopia, Palatino, 'Palatino Linotype', serif;
+    color: #224B8D;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+div {
+    font-family: Georgia, Utopia, Palatino, 'Palatino Linotype', serif;
+}
+
+.paper-ref h1 {
+    text-align: center;
+    color: #3CB226;
+    font-size: 18px;
+    margin: 5px;
+    font-weight: bold;
+}
+
+.paper-ref a {
+    color: #224B8D;
+    text-decoration: none;
+}
+
+
+.paper-ref p {
+    padding-left: 15px;
+    padding-right: 15px;
+    font-size: 15px;
+}
+
+.paper-ref .row {
+    text-align: center;
+    font-size: 16px;
+}
+
+.btn-xlarge {
+    padding: 18px 28px;
+    font-size: 22px; //change this to your desired size
+    line-height: normal;
+    -webkit-border-radius: 8px;
+       -moz-border-radius: 8px;
+            border-radius: 8px;
+}
+
+.ui-autocomplete {
+    position: absolute;
+    z-index: 1000;
+    cursor: default;
+    padding: 0;
+    margin-top: 2px;
+    list-style: none;
+    background-color: #ffffff;
+    border: 1px solid #ccc
+    -webkit-border-radius: 5px;
+       -moz-border-radius: 5px;
+            border-radius: 5px;
+    -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+       -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+.ui-autocomplete > li {
+  padding: 3px 20px;
+}
+.ui-autocomplete > li.ui-state-focus {
+  background-color: #DDD;
+}
+.ui-helper-hidden-accessible {
+  display: none;
+}

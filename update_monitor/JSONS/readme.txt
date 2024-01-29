@@ -1,0 +1,1 @@
+folder where output jsons are saved for each kind of media

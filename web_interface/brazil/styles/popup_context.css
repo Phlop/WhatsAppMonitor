@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab');
+
+.context_modalDialog {
+	position: fixed;
+	font-family: 'Roboto Slab', serif;	
+	text-align: center;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 999;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+	
+}
+
+
+.context_modalDialog:target {
+	opacity:1;
+	pointer-events: auto;
+	
+}
+
+.context_modalDialog > div {
+	width: 600px;
+	max-height: 600px;
+	color: #595959;
+	position: relative;
+	margin: 10% auto;
+	padding: 0px 0px 13px 0px;
+	font-family: 'Roboto Slab', serif;
+	text-align: center;
+	border-collapse: collapse;
+	border-radius: 1em;
+	overflow: hidden;
+	border-radius: 25px ;
+	background: -moz-linear-gradient( #f1f5fa, #ecf2f8);
+	background: -webkit-linear-gradient( #f1f5fa, #ecf2f8);
+	background: -o-linear-gradient( #f1f5fa, #ecf2f8);
+	overflow: auto;
+}
+
+.context_modal_header {	
+	text-align: center;
+	border-radius: 25px 25px 5px 5px;
+	width: 100%;
+    padding: 2px 16px;
+    background-color: darkred;
+    color: white;
+}
+
+
+.context_close {
+	background: steelblue;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: 15px;
+	top: 8px;
+	font-size: 20px;
+	text-align: center;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+
+.context_close:hover { background: #00d9ff; }
+
+
+
+
+
+
+/*---------- LISTA DE GRUPOS ----------*/

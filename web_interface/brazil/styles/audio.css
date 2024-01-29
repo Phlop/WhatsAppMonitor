@@ -1,0 +1,101 @@
+audio:hover, audio:focus, audio:active
+{
+-webkit-box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
+-moz-box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
+box-shadow: 15px 15px 20px rgba(0,0, 0, 0.4);
+}
+
+
+audio
+{
+width: 100%;
+-moz-box-shadow: 2px 2px 4px 0px #006773;
+-webkit-box-shadow:  2px 2px 4px 0px #006773;
+box-shadow: 2px 2px 4px 0px #006773;
+-moz-border-radius:7px 7px 7px 7px ;
+-webkit-border-radius:7px 7px 7px 7px ;
+border-radius:7px 7px 7px 7px ;
+padding: 2px 0px 2px 0px;
+}
+
+.audio_player{
+
+height: 100px;
+-moz-border-radius:7px 7px 7px 7px ;
+-webkit-border-radius:7px 7px 7px 7px ;
+border-radius:7px 7px 7px 7px ;
+padding: 15px 0px 25px 0px;
+}
+
+/*-------DISPLAY DOS LINKS-------*/
+
+a.audio_title{
+  font-family: 'Roboto Slab', serif;
+  font-weight: 900;
+  color: darkred;
+  line-height: 1.5;
+  margin-bottom: 1px;
+  margin-top: 5px;
+  margin-left: 20px;
+  font-size: 14px;
+  text-align: left;
+}
+
+
+
+/*-------ESTILO DAS CAIXAS DOS LINKS-------*/
+
+.audio_body {
+  background: white;
+  font-family: sans-serif;
+  height: 200vh;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 24px;
+}
+
+.audio_box {
+	position: relative;
+	max-width: 1180px;
+	margin: 15px auto auto auto;
+	width: 50%;
+    padding: 1px;
+}
+
+/*-------DESCRIÇÃO DOS LINKS-------*/
+
+#audio-description {
+  max-height: 100px;
+  position: relative;
+  overflow: hidden;
+  text-align: left;
+  /* Set Transitions */
+  transition: max-height 0.5s;
+}
+
+#audio-description.open {
+  max-height: 1500px;
+  /* Set transitions */
+  transition: max-height 0.5s;
+}
+
+#audio-description.collapsed {
+  /* Set transitions */
+}
+
+#audio-description .text {
+  text-align: justify;
+  font-weight: 400;
+  min-height: 200px;
+  width: 1000px;
+  float: left;
+  margin-top: 1px;
+  margin-bottom: 5px;
+  margin-left: 35px;
+  padding: 15px 5px;
+  font-size: 14px;
+  color: #666;
+  font-family: 'Roboto Slab', sans-serif;
+}
