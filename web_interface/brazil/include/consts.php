@@ -6,7 +6,7 @@
  */
 
 define("DSN_whatsapp", 'pgsql:host=127.0.0.1;dbname=whatsapp;'
-    . 'user=whomakestrends;password=678hjba!@1ABCUyvs8;'
+    . 'user=*****;password=**********'
     . 'connect_timeout=10');
 
 define('DSN_MAIN', DSN_whatsapp);
