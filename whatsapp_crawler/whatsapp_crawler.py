@@ -433,6 +433,10 @@ class WhatsAppCrawler():
     def save_media_url_hash(self, media_url, media_type, hash, filename):
         hashes_filename = "mediaURL_%s.njson" %(media_type)
         fullname =  join(self.path_hashes, hashes_filename)
+        
+        if not os.path.isdir(self.path_hashes):
+            os.makedirs(self.path_hashes)
+
         with open(fullname, 'a') as fout:
             new_line = "{}\t{}\t{}\n".format(media_url, hash, filename)
             fout.write(new_line)
@@ -906,31 +910,32 @@ class WhatsAppCrawler():
                 mime_type =  message['media']['mime_type']
                 media_key =  message['media']['media_key']
                 media_type = message['media']['media_type']
-                
-                if media_url not in all_mediaURLs[media_type]: 
-                
-                    if self.is_collect_media(media_type):
-                        stored_filename = self.download_media_file(media_url, mime_type, media_key )
-                        if self.is_hash(media_type):
-                            hashes_dict =  self.get_hash_from_file(stored_filename, media_type)
-                            main_method = self.get_main_method(media_type)
-                            
-                            for method in hashes_dict.keys():
-                                hash  = hashes_dict[method]
-                                message['media']['hashes'][method]   = hash
-                                new_filename = self.replace_filename(stored_filename, hash, method, media_type, all_hashes)
-                                all_hashes[media_type][method][hash] = new_filename
-                                if method == main_method:  
-                                    main_file = new_filename
-                            message['media']['stored_filename'] = main_file
-                            self.save_media_url_hash(media_url, media_type, hash, main_file)
-                            all_mediaURLs[media_type][media_url] = (hash, main_file)
-                else: #means that media_URL was previously colected in another message
-                
-                    method = self.get_main_method(media_type)
-                    message['media']['hashes'][method]   = all_mediaURLs[media_type][media_url][0]
-                    message['media']['stored_filename']  = all_mediaURLs[media_type][media_url][1]
-                
+                try:
+                    if media_url not in all_mediaURLs[media_type]: 
+                    
+                        if self.is_collect_media(media_type):
+                            stored_filename = self.download_media_file(media_url, mime_type, media_key )
+                            if self.is_hash(media_type):
+                                hashes_dict =  self.get_hash_from_file(stored_filename, media_type)
+                                main_method = self.get_main_method(media_type)
+                                
+                                for method in hashes_dict.keys():
+                                    hash  = hashes_dict[method]
+                                    message['media']['hashes'][method]   = hash
+                                    new_filename = self.replace_filename(stored_filename, hash, method, media_type, all_hashes)
+                                    all_hashes[media_type][method][hash] = new_filename
+                                    if method == main_method:  
+                                        main_file = new_filename
+                                message['media']['stored_filename'] = main_file
+                                self.save_media_url_hash(media_url, media_type, hash, main_file)
+                                all_mediaURLs[media_type][media_url] = (hash, main_file)
+                    else: #means that media_URL was previously colected in another message
+                    
+                        method = self.get_main_method(media_type)
+                        message['media']['hashes'][method]   = all_mediaURLs[media_type][media_url][0]
+                        message['media']['stored_filename']  = all_mediaURLs[media_type][media_url][1]
+                except:
+                    print "UNKOWN MEDIA TYPE FOUND: ", media_type
     
             
             message_string = self.old_format_message(message)
@@ -1065,7 +1070,7 @@ def main():
 
 if __name__ == '__main__':
     
-    #python whatsapp_crawler.py --database /scratch4/whatsapp/root/Politics01/msgstore.db --datalake /scratch4/whatsapp/DATABASE_CRAWLER/ -s 2022-05-01 -e 2023-12-31
+    #python whatsapp_crawler.py --database /home/user/Documents/ic/data/msgstore-2024-01-09.db --datalake /home/user/Documents/ic/data/msgstore-2024-01-09.db
     #python whatsapp_crawler.py --database /scratch4/whatsapp/root/Politics02/msgstore_2022_06_06.db --datalake /scratch4/whatsapp/DATABASE_CRAWLER/ -s 2022-05-01 -e 2023-12-31
     #python whatsapp_crawler.py --database /scratch4/whatsapp/root/Politics03/msgstore_2022_06_06.db --datalake /scratch4/whatsapp/DATABASE_CRAWLER/ -s 2022-05-01 -e 2023-12-31
     #python whatsapp_crawler.py --database /scratch4/whatsapp/root/Politics02/msgstore.db --datalake /scratch4/whatsapp/root/Politics02/data/ -s 2022-05-01 -e 2023-12-31

@@ -1,0 +1,9 @@
+pathlib
+imagehash
+pytz
+django
+python-axolotl
+pycrypto
+phonenumbers
+psycopg2-binary
+
